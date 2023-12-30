@@ -8,9 +8,9 @@ function BookList() {
   return (
     <section className="booklist">
       <EventExamples />
-      {books.map((book) => {
+      {books.map((book, index) => {
         //const { img, title, author, id } = book;
-        return <Book {...book} key={book.id} />;
+        return <Book {...book} key={book.id} number={index} />;
       })}
     </section>
   );
