@@ -1,26 +1,31 @@
+import img1 from "./images/book-1.jpg";
+import img2 from "./images/book-2.jpg";
+import img3 from "./images/book-3.jpg";
+import img4 from "./images/book-4.jpg";
+
 export const books = [
   {
     author: "Jordan Moore",
     title: "Interesting Facts For Curious Minds",
-    img: "./images/book-1.jpg",
+    img: img1,
     id: 1,
   },
   {
     author: "Alex Snodgrass",
     title: "Dinner Tonight",
-    img: "https://images-na.ssl-images-amazon.com/images/W/MEDIAX_792452-T1/images/I/811HITbWChL._AC_UL600_SR600,400_.jpg",
+    img: img2,
     id: 2,
   },
   {
     author: "James Clear",
     title: "Atomic Habits",
-    img: "https://images-na.ssl-images-amazon.com/images/W/MEDIAX_792452-T1/images/I/81YkqyaFVEL._AC_UL600_SR600,400_.jpg",
+    img: img3,
     id: 3,
   },
   {
     author: "Liz Cheney",
     title: "Oath and Honour",
-    img: "https://images-na.ssl-images-amazon.com/images/W/MEDIAX_792452-T1/images/I/71CX11nGhWL._AC_UL600_SR600,400_.jpg",
+    img: img4,
     id: 4,
   },
 ];
