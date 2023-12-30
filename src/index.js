@@ -1,17 +1,59 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import { books } from "./books";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+function BookList() {
+  return (
+    <section className="booklist">
+      <EventExamples />
+      {books.map((book) => {
+        //const { img, title, author, id } = book;
+        return <Book {...book} key={book.id} />;
+      })}
+    </section>
+  );
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const EventExamples = () => {
+  const handleButtonClick = () => {
+    console.log("Handle Button Click");
+  };
+  const handleFormSubmission = () => {
+    console.log("Form Submitted");
+  };
+  return (
+    <section>
+      <form onSubmit={handleFormSubmission}>
+        <h2>Typical Form</h2>
+        <input
+          type="text"
+          name="example"
+          onChange={(e) => console.log(e.target.value)}
+          style={{ margin: "1rem 0" }}
+        />
+        <button type="submit" onClick={handleFormSubmission}>
+          Submit
+        </button>
+      </form>
+      <div>
+        <button onClick={handleButtonClick} type="button">
+          Click Me
+        </button>
+      </div>
+    </section>
+  );
+};
+
+const Book = ({ img, title, author, getBook, id }) => {
+  return (
+    <article className="book">
+      <img src={img} alt={title} />
+      <h2>{title}</h2>
+      <h4>{author.toUpperCase()}</h4>
+    </article>
+  );
+};
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(<BookList />);
